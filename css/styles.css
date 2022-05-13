@@ -1,6 +1,138 @@
+:root {
+  --gap-size: 2rem;
+}
+
 body {
-    background: white;
-    margin: 0 auto;
-    width: 100%;
-    font-family: "Open Sans", sans-serif;
-  }
+  background: white;
+  margin: 0 auto;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-size);
+}
+
+.header-top {
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem 2rem;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background: #ddd;
+  flex-direction: column;
+}
+
+.menu a {
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
+.menu a:hover {
+  background-color: #bbb;
+}
+
+.header-logo figure {
+  margin: 0;
+  /* padding: 0rem 1rem; */
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-size);
+}
+
+.banner {
+  background: #ddd;
+  min-height: 200px;
+}
+
+.post-list{
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-size);
+  justify-content: center;
+  align-items: center;
+}
+
+.post {
+  background: #ddd;
+  height: 200px;
+  width: 200px;
+  display: block;
+}
+
+
+.info-banner {
+  background: #ddd;
+  min-height: 200px;
+}
+
+.footer {
+  background: #ddd;
+  min-height: 200px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+
+
+/*post*/
+
+.blogg > h2 {
+  text-align: center;
+  background-color: yellow;
+}
+
+.blogg > p {
+  text-align: center;
+  background-color: yellow;
+}
+
+
+/*contact*/
+
+.contact {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+
+.contact .contact-form {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.contact .contact-form input, .contact .contact-form textarea {
+  margin: 5px;
+}
+
+input,
+textarea {
+  padding: 14px 20px;
+  border-radius: 4px; 
+  border: 2px solid #2D3319;
+}
+
+input[type=submit] {
+  background-color: #FF0000;
+  color: #FFFFFF;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
