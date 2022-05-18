@@ -81,6 +81,12 @@ body {
   width: 100%;
 }
 
+.post-img{
+  height: 200px;
+  max-width: 200px;
+  object-fit: cover;
+}
+
 
 .info-banner {
   background: #ddd;
@@ -171,6 +177,14 @@ input[type=submit] {
     flex-direction: row;
     justify-content: space-around;
   }
+
+  .banner-img{
+    height: 100%;
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+  }
+
 }
 
 
@@ -184,5 +198,8 @@ input[type=submit] {
   .post-list {
     grid-template-columns: repeat(4, 1fr);
   }
+
+
+
 
 }
