@@ -32,7 +32,6 @@ body {
 
 .menu {
   display: none;
-  position: absolute;
   inset: 0;
   background: #ddd;
   flex-direction: column;
@@ -45,6 +44,13 @@ body {
 
 .menu a:hover {
   background-color: #bbb;
+}
+
+#mobil-menu:checked ~ .menu {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: row;
 }
 
 .header-logo figure {
@@ -196,7 +202,7 @@ input[type=submit] {
     background-color: yellowgreen;
   }
 
-.hamburger {display: none;}
+#hamburger-label {display: none;}
 
   .post-list {
     grid-template-columns: repeat(4, 1fr);
