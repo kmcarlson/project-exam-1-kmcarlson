@@ -34,3 +34,6 @@ function validate(){
     alert("Thanks for the message, we will contact you!");
     return true;
   }
+
+
+

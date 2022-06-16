@@ -9,6 +9,8 @@
       src="https://kit.fontawesome.com/075c648cb7.js"
       crossorigin="anonymous"
     ></script>
+    <script src="js/postlist.js"> </script>
+    <script src="js/modal.js"> </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,20 +23,24 @@
     <header class="header-top">
       <a href="index.html"  class="header-logo">
         <figure>
-          <img src="/images/logo.png"/>
-          <div style="width: 50px; height: 50px; background: #ff0000"></div>
+          <img class="logo" src="images/logo.png"/>
         </figure>
-        <h1>test</h1>
       </a>
-      <div class="hamburger">
-        <label for="mobil-menu" id="hamburger-label"><i class="fas fa-hamburger"></i></label>
-        <input type="checkbox" style="visibility: hidden;" id="mobil-menu"/>
-        <nav class="menu">
+      <div class="menu">
+        <nav>
+        <a href="list.html">List</a>
+        <a href="Contact.html">Contact</a>
+        <a href="about.html">About</a>
+        </nav>
+      </div>
+      <div class="mobile-menu">
+        <i onclick="showHamburgerMenu()" class="fas fa-hamburger"></i>
+        <div id="mobile-menu-hidden">
+          <i onclick="hideHamburgerMenu()" 2 class="fas fa-cross"></i>
           <a href="list.html">List</a>
           <a href="Contact.html">Contact</a>
           <a href="about.html">About</a>
-          <a href="#">Link</a>
-        </nav>
+        </div>
       </div>
     </header>
 
@@ -46,20 +52,8 @@
         />
       </section>
 
-      <section class="post-list">
-        <div class="post">
-        <img src="images/dan-gold-4_jhDO54BYg-unsplash.jpg" class="post-img">
-            <a href="#">Link</a>
-        </div>
-        <div class="post">
-          <a href="#">Link</a>
-        </div>
-        <div class="post">
-          <a href="#">Link</a>
-        </div>
-        <div class="post">
-          <a href="#">Link</a>
-        </div>
+      <section id="post-list">
+    
       </section>
 
       <section class="info-banner mw-page">
@@ -71,34 +65,23 @@
     </main>
 
     <footer class="footer">
-      <div>
-        <h3>Follow us</h3>
-        <ul>
-          <li>facebook</li>
-          <li>Insta</li>
-          <li>noeAnnet</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3>Company information</h3>
-        <ul>
-          <li>adr</li>
-          <li>adr</li>
-          <li>adr</li>
-          <li>adr</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3>Meny</h3>
-        <ul>
-          <li>meny1</li>
-          <li>meny2</li>
-          <li>meny3</li>
-          <li>meny3</li>
-        </ul>
-      </div>
-    </footer>
+      <section id="section-contact">
+          <h3>Contact us</h3>
+          <p class="footer-text"><i class="fas fa-home"></i>Slottsplassen 1, 0010 Oslo</p>
+          <p class="footer-text"><i class="fas fa-envelope"></i>hungry@foodz.com</p>
+          <p class="footer-text"><i class="fas fa-phone-alt"></i>22 22 55 55</p>
+      </section>
+      <section id="section-some">
+          <h3>Social media</h3>
+          <p class="footer-text"><i class="fab fa-facebook-square"></i>Facebook</p>
+          <p class="footer-text"><i class="fab fa-instagram"></i>Instagram</p>
+          <p class="footer-text"><i class="fab fa-twitter"></i>Twitter</p>
+      </section>
+      <section id="section-news">
+          <h3>Newsletter</h3>
+          <input type="email" placeholder="ola@nordmann.no" id="newsletter-input">
+          <button id="newsletter-button">Sign up</button>
+      </section>
+  </footer>
   </body>
 </html>

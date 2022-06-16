@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://kit.fontawesome.com/075c648cb7.js" crossorigin="anonymous"></script>
+    <script src="js/post.js"></script>
+    <script src="js/modal.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"> 
@@ -13,75 +16,58 @@
 </head>
 <body>
 
-    <header class="header-top">
-        <a href="index.html" class="header-logo">
-          <figure>
-            <!-- <img src="test"/> -->
-            <div style="width: 50px; height: 50px; background: #ff0000"></div>
-          </figure>
-          <h1>test</h1>
-        </a>
-        <div class="hamburger">
-          <label for="mobil-menu" id="hamburger-label"><i class="fas fa-hamburger"></i></label>
-          <input type="checkbox" style="visibility: hidden;" id="mobil-menu"/>
-          <nav class="menu">
-            <a href="list.html">List</a>
-            <a href="Contact.html">Contact</a>
-            <a href="about.html">About</a>
-            <a href="#">Link</a>
-          </nav>
-        </div>
-      </header>
+  <header class="header-top">
+    <a href="index.html"  class="header-logo">
+      <figure>
+        <img class="logo" src="images/logo.png"/>
+      </figure>
+    </a>
+    <div class="menu">
+      <nav>
+        <a href="list.html">List</a>  
+        <a href="Contact.html">Contact</a>  
+        <a href="about.html">About</a>  
+      </nav>
+    </div>
+    <div class="mobile-menu">
+      <i onclick="showHamburgerMenu()" class="fas fa-hamburger"></i>
+      <div id="mobile-menu-hidden">
+        <i onclick="hideHamburgerMenu()" 2 class="fas fa-cross"></i>
+        <a href="list.html">List</a>
+        <a href="Contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </header>
 
-    <main class="main-content post-wrapper" >
-       <section class="blogg">
-           <h2 class="headline">Curabitur ante urna</h2>
-            <p class="content">Curabitur ante urna, pellentesque maximus tellus nec, luctus blandit ante. Phasellus sit amet nisi varius, ultricies urna hendrerit, iaculis leo. Quisque tristique facilisis blandit. In at fermentum lacus. Vivamus ut hendrerit velit, et tincidunt sem. Aliquam ornare viverra aliquam. Nam laoreet est velit, sollicitudin semper felis pretium ut. Phasellus laoreet porttitor sem, eget interdum purus malesuada sed. Sed convallis venenatis auctor. Cras et felis vehicula, gravida ex eget, consectetur quam. Mauris blandit quam id luctus commodo. Nullam pharetra erat et scelerisque maximus. Nunc sagittis turpis vel nulla dapibus, at iaculis leo euismod. Aliquam sodales, arcu sed bibendum condimentum, velit ligula rutrum velit, vel dapibus orci justo a mi. Aenean gravida risus eu nunc semper ullamcorper. Etiam congue sollicitudin lacus non rutrum.
-
-                Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque ullamcorper laoreet laoreet. Nullam sit amet mollis magna. Suspendisse purus tellus, interdum in urna sed, ornare tincidunt dui. Nam a elit condimentum, condimentum erat id, eleifend augue. Etiam suscipit pulvinar iaculis. Sed quam dui, pulvinar eget ipsum eu, faucibus auctor lorem. Cras lobortis, metus quis pellentesque varius, purus nulla pretium metus, sed interdum neque dolor ut lorem. Vivamus eu diam libero. Ut a sapien lorem. Cras aliquet auctor orci, vitae tincidunt diam. Mauris dictum tellus id aliquet tempus. Nullam semper, neque sagittis sagittis tincidunt, felis neque egestas arcu, quis commodo nunc risus et magna. Sed quis libero commodo, pretium purus in, mattis dui. Donec id blandit ex.</p>
-
-            
-        </section>
-
-        <section class="post-img">
-            <img src="images/amirali-mirhashemian-jh5XyK4Rr3Y-unsplash.webp" />
-        </section>
-
+    <main class="main-content" id="post-wrapper" >
+       
 
  
 
         
     </main>
 
+   
+
     <footer class="footer">
-        <div>
-            <h3>Firmanavn</h3>
-            <ul>
-                <li>facebook</li>
-                <li>Insta</li>
-                <li>noeAnnet</li>
-            </ul>
-        </div>
-
-        <div>
-            <h3>Firmanavn</h3>
-            <ul>
-                <li>adr</li>
-                <li>adr</li>
-                <li>adr</li>
-                <li>adr</li>
-            </ul>
-        </div>
-
-        <div>
-            <h3>Meny</h3>
-            <ul>
-                <li> meny1 </li>
-                <li> meny2 </li>
-                <li> meny3 </li>
-                <li> meny3 </li>
-            </ul>
-        </div>
+        <section id="section-contact">
+            <h3>Contact us</h3>
+            <p class="footer-text"><i class="fas fa-home"></i>Slottsplassen 1, 0010 Oslo</p>
+            <p class="footer-text"><i class="fas fa-envelope"></i>hungry@foodz.com</p>
+            <p class="footer-text"><i class="fas fa-phone-alt"></i>22 22 55 55</p>
+        </section>
+        <section id="section-some">
+            <h3>Social media</h3>
+            <p class="footer-text"><i class="fab fa-facebook-square"></i>Facebook</p>
+            <p class="footer-text"><i class="fab fa-instagram"></i>Instagram</p>
+            <p class="footer-text"><i class="fab fa-twitter"></i>Twitter</p>
+        </section>
+        <section id="section-news">
+            <h3>Newsletter</h3>
+            <input type="email" placeholder="ola@nordmann.no" id="newsletter-input">
+            <button id="newsletter-button">Sign up</button>
+        </section>
     </footer>
 </body>
 </html>
