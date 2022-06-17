@@ -91,7 +91,7 @@ body {
 #post-list{
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--gap-size-mobile);
+  gap: var(--gap-size);
 }
 
 .post-list-wrapper{
@@ -170,6 +170,18 @@ body {
 #newsletter-button:hover {
   background-color: red;
   color: white;
+}
+
+.fa-facebook-square:hover {
+  color: #4267B2;
+}
+
+.fa-instagram:hover {
+  color: #8a3ab9;
+}
+
+.fa-twitter:hover {
+  color: #00acee;
 }
 
 
@@ -312,6 +324,7 @@ input[type=submit] {
 nav > a {
   font-weight: 700;
   text-decoration: none;
+  color: black;
 }
 
 

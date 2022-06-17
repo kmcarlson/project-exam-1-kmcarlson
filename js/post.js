@@ -13,7 +13,7 @@ async function generatePost() {
     let params = (new URL(document.location)).searchParams;
     let postId = params.get("postId");
     let post = await getPost(postId)
-    document.title = `${post.title.rendered} | diggeste maten levers av foodz`;
+    document.title = `${post.title.rendered} | Foodz - The best recipes`;
     let wrapper = document.getElementById('post-wrapper')
         wrapper.innerHTML +=`
             <section class="blogg">
