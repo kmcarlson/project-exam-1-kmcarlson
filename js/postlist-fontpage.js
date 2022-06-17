@@ -20,8 +20,8 @@ async function generatePosts() {
     let post = await getPosts()
 
     console.log(post)
-    let num = 0;
-    let wrapper = document.getElementById('post-list' + num)
+
+    let wrapper = document.getElementById('post-list')
     post.forEach(post => {
         wrapper.innerHTML +=`
             <a href=post.html?postId=${post.id} class="post">
