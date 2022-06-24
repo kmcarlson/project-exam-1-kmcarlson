@@ -10,7 +10,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/postlist-fontpage.js"> </script>
-    <script src="js/modal.js"> </script>
+    <script defer src="js/modal.js"> </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -52,8 +52,12 @@
         />
       </section>
 
-      <section id="post-list">
-    
+      <section class="carousel-wrapper">
+        <span id="arrow-left" role="button">↫</span>
+        
+        <section class="carousel" id="carousel"></section>
+
+        <span id="arrow-right" role="button">↬</span>
       </section>
       
 

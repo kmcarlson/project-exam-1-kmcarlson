@@ -21,17 +21,42 @@ async function generatePosts() {
 
     console.log(post)
 
-    let wrapper = document.getElementById('post-list')
-    post.forEach(post => {
-        wrapper.innerHTML +=`
-            <a href=post.html?postId=${post.id} class="post">
-                <img src=${post._embedded['wp:featuredmedia'][0].source_url} class="featured-img">
-                <p>${post.title.rendered}</p>
-            </a>
+    let wrapper = document.getElementById('carousel')
 
+    let div = document.createElement("div");
+
+    for(let i = 1; i < post.length; i++) {
+        if(i % 4 == 0) {
+            div.innerHTML += `
+                <a href=post.html?postId=${post[i].id} class="post">
+                    <img src=${post[i]._embedded['wp:featuredmedia'][0].source_url} class="featured-img">
+                    <p>${post[i].title.rendered}</p>
+                </a>
+            `;
+
+            wrapper.appendChild(div);
+            div = document.createElement("div");
+        }
+        else {
+            div.innerHTML += `
+                <a href=post.html?postId=${post[i].id} class="post">
+                    <img src=${post[i]._embedded['wp:featuredmedia'][0].source_url} class="featured-img">
+                    <p>${post[i].title.rendered}</p>
+                </a>
+            `;
+        }
+    }
+    
+    wrapper.appendChild(div);
+
+    // post.forEach(post => {
+    //     wrapper.innerHTML +=`
+    //         <a href=post.html?postId=${post.id} class="post">
+    //             <img src=${post._embedded['wp:featuredmedia'][0].source_url} class="featured-img">
+    //             <p>${post.title.rendered}</p>
+    //         </a>
+    //     `;
         
-        `
-        
-    });
+    // });
 
 }
