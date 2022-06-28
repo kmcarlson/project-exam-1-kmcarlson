@@ -8,25 +8,25 @@ function validate(){
     
     let text;
     if(name.length < 5){
-      text = "Please Enter valid Name";
+      text = "* Please Enter valid Name";
       error_message.classList.remove('hidden');
       error_message.innerHTML = text;
       return false;
     }
     if(email.indexOf("@") == -1 || email.length < 6){
-      text = "Please Enter valid Email";
+      text = "* Please Enter valid Email";
       error_message.classList.remove('hidden');
       error_message.innerHTML = text;
       return false;
     }
     if(isNaN(phone) || phone.length != 8){
-      text = "Please Enter valid Phone Number";
+      text = "* Please Enter valid Phone Number";
       error_message.classList.remove('hidden');
       error_message.innerHTML = text;
       return false;
     }
     if(message.length <= 30){
-      text = "Please Enter More Than 30 Characters";
+      text = "* Please Enter More Than 30 Characters";
       error_message.classList.remove('hidden');
       error_message.innerHTML = text;
       return false;
