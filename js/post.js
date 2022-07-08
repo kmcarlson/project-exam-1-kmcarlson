@@ -17,7 +17,7 @@ async function generatePost() {
     let wrapper = document.getElementById('post-wrapper')
         wrapper.innerHTML +=`
             <section class="blogg">
-                <h2 class="headline">${post.title.rendered}</h2>
+                <h2 class="headline ">${post.title.rendered}</h2>
                 <p class="content">${post.content.rendered}</p>
             </section> 
             <section onclick="showModal('modal-hidden')" class="post-img">
