@@ -22,29 +22,48 @@ async function generatePosts() {
     console.log(post)
 
     let wrapper = document.getElementById('carousel')
-
     let div = document.createElement("div");
 
     for(let i = 1; i < post.length; i++) {
         if(i % 4 == 0) {
-            div.innerHTML += `
-                <a href=post.html?postId=${post[i].id} class="post">
-                    <img src=${post[i]._embedded['wp:featuredmedia'][0].source_url} class="featured-img">
-                    <p>${post[i].title.rendered}</p>
-                </a>
-            `;
+            let image = document.createElement("img");
+            image.src = `${post[i]._embedded['wp:featuredmedia'][0].source_url}`;
+            image.classList.add("featured-img");
 
+            let text = document.createElement("p");
+            text.innerHTML = `${post[i].title.rendered}`;
+
+            let link = document.createElement("a");
+            link.href = `post.html?postId=${post[i].id}`;
+            link.class = 'post';
+
+            link.appendChild(image);
+            link.appendChild(text);
+
+            div.appendChild(link);
             wrapper.appendChild(div);
+
             div = document.createElement("div");
         }
         else {
-            div.innerHTML += `
-                <a href=post.html?postId=${post[i].id} class="post">
-                    <img src=${post[i]._embedded['wp:featuredmedia'][0].source_url} class="featured-img">
-                    <p>${post[i].title.rendered}</p>
-                </a>
-            `;
+            let image = document.createElement("img");
+            image.src = `${post[i]._embedded['wp:featuredmedia'][0].source_url}`;
+            image.classList.add("featured-img");
+
+            let text = document.createElement("p");
+            text.innerHTML = `${post[i].title.rendered}`;
+
+            let link = document.createElement("a");
+            link.href = `post.html?postId=${post[i].id}`;
+            link.class = 'post';
+
+            link.appendChild(image);
+            link.appendChild(text);
+
+            div.appendChild(link);
+            wrapper.appendChild(div);
         }
+
     }
     
     wrapper.appendChild(div);
