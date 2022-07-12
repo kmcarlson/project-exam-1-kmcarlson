@@ -25,43 +25,29 @@ async function generatePosts() {
     let div = document.createElement("div");
 
     for(let i = 1; i < post.length; i++) {
+            let image = document.createElement("img");
+            image.src = `${post[i]._embedded['wp:featuredmedia'][0].source_url}`;
+            image.classList.add("featured-img");
+            image.classList.add("circle");
+
+
+            let text = document.createElement("p");
+            text.innerHTML = `${post[i].title.rendered}`;
+            text.classList.add("headline");
+
+            let link = document.createElement("a");
+            link.href = `post.html?postId=${post[i].id}`;
+            link.classList.add("post");
+          
+
+            link.appendChild(image);
+            link.appendChild(text);
+
+            div.appendChild(link);
+            wrapper.appendChild(div);
+
         if(i % 4 == 0) {
-            let image = document.createElement("img");
-            image.src = `${post[i]._embedded['wp:featuredmedia'][0].source_url}`;
-            image.classList.add("featured-img");
-
-            let text = document.createElement("p");
-            text.innerHTML = `${post[i].title.rendered}`;
-
-            let link = document.createElement("a");
-            link.href = `post.html?postId=${post[i].id}`;
-            link.class = 'post';
-
-            link.appendChild(image);
-            link.appendChild(text);
-
-            div.appendChild(link);
-            wrapper.appendChild(div);
-
             div = document.createElement("div");
-        }
-        else {
-            let image = document.createElement("img");
-            image.src = `${post[i]._embedded['wp:featuredmedia'][0].source_url}`;
-            image.classList.add("featured-img");
-
-            let text = document.createElement("p");
-            text.innerHTML = `${post[i].title.rendered}`;
-
-            let link = document.createElement("a");
-            link.href = `post.html?postId=${post[i].id}`;
-            link.class = 'post';
-
-            link.appendChild(image);
-            link.appendChild(text);
-
-            div.appendChild(link);
-            wrapper.appendChild(div);
         }
 
     }

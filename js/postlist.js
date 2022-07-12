@@ -25,8 +25,8 @@ async function generatePosts() {
     post.forEach(post => {
         wrapper.innerHTML +=`
             <a href=post.html?postId=${post.id} class="post">
-                <img src=${post._embedded['wp:featuredmedia'][0].source_url} class="featured-img">
-                <p>${post.title.rendered}</p>
+                <img src=${post._embedded['wp:featuredmedia'][0].source_url} class="featured-img circle">
+                <p class="headline">${post.title.rendered} </p>
             </a>
 
         
