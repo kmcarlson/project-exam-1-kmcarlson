@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="https://kit.fontawesome.com/075c648cb7.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"> 
-    <script src="js/modal.js"> </script>
-    <script src="./js/validation.js" ></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/075c648cb7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="js/modal.js"></script>
+    <script src="./js/validation.js"></script>
     <title>Bloggerz</title>
-</head>
-<body>
-
-  <header class="header-top">
-    <a href="index.html"  class="header-logo">
-      <figure>
-        <img class="logo" src="images/logo.png"/>
-      </figure>
-    </a>
-    <div class="menu">
-      <nav>
-        <a href="list.html">List</a>  
-        <a href="Contact.html">Contact</a>  
-        <a href="about.html">About</a>  
-      </nav>
-    </div>
-    <div class="mobile-menu">
-      <i onclick="showHamburgerMenu()" class="fas fa-hamburger"></i>
-      <div id="mobile-menu-hidden">
-        <i onclick="hideHamburgerMenu()" 2 class="fas fa-cross"></i>
-        <a href="list.html">List</a>
-        <a href="Contact.html">Contact</a>
-        <a href="about.html">About</a>
+  </head>
+  <body>
+    <header class="header-top">
+      <a href="index.html" class="header-logo">
+        <figure>
+          <img class="logo" src="images/logo.png" />
+        </figure>
+      </a>
+      <div class="menu">
+        <nav>
+          <a href="list.html">List</a>
+          <a href="Contact.html">Contact</a>
+          <a href="about.html">About</a>
+        </nav>
       </div>
-    </div>
-  </header>
+      <div class="mobile-menu">
+        <i onclick="showHamburgerMenu()" class="fas fa-hamburger"></i>
+        <div id="mobile-menu-hidden">
+          <i onclick="hideHamburgerMenu()" 2 class="fas fa-cross"></i>
+          <a href="list.html">List</a>
+          <a href="Contact.html">Contact</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+    </header>
 
     <main class="main-content">
       <div class="mapouter">
-        <iframe width="1200"
+        <iframe
+          width="1200"
           id="gmap_canvas"
           src="https://maps.google.com/maps?q=Slottsplassen%201,%200010%20Oslo&t=&z=13&ie=UTF8&iwloc=&output=embed"
           frameborder="0"
@@ -49,52 +55,65 @@
         ></iframe>
       </div>
 
-        
+      <section class="contact">
+        <div class="contact-information">
+          <h2>Contact information</h2>
+          <div>
+            <p><i class="fas fa-phone"></i> 22 22 55 55</p>
+            <p><i class="far fa-envelope"></i> hungry@foodz.com</p>
+            <p><i class="fas fa-home"></i> ADR</p>
+          </div>
+        </div>
 
-                <section class="contact" >
-                    
-                   <div class="contact-information">
-                      <h2>Contact information</h2> 
-                      <div>
-                         <p><i class="fas fa-phone"></i>  22 22 55 55</p> 
-                        <p> <i class="far fa-envelope"></i>  hungry@foodz.com</p>
-                        <p> <i class="fas fa-home"></i> ADR</p> 
-                      </div> 
-                   </div>  
-                 
-                   <form class="contact-form p-5" onsubmit="return false">
-                    <input type="text" id="name" name="name" input placeholder="Name">
-                    <input type="emali" id="emali" name="emali" input placeholder="Emali">
-                    <input type="tel" id="phone" name="phone" input placeholder="Phone">
-                    <textarea id="message" placeholder="Your message" name="message" ></textarea>
-                    <input type="submit" onclick="validate()" value="Send message"/>
-                    <div id="error_message" class="hidden"></div>
-                 </form>  
-                </section>
-
-           
-
-        
+        <form class="contact-form p-5" onsubmit="return false">
+          <input type="text" id="name" name="name" input placeholder="Name" />
+          <input
+            type="emali"
+            id="emali"
+            name="emali"
+            input
+            placeholder="Emali"
+          />
+          <input type="tel" id="phone" name="phone" input placeholder="Phone" />
+          <textarea
+            id="message"
+            placeholder="Your message"
+            name="message"
+          ></textarea>
+          <input type="submit" onclick="validate()" value="Send message" />
+          <div id="error_message" class="hidden"></div>
+        </form>
+      </section>
     </main>
 
     <footer class="footer">
       <section id="section-contact">
-          <h3>Contact us</h3>
-          <p class="footer-text"><i class="fas fa-home"></i>Slottsplassen 1, 0010 Oslo</p>
-          <p class="footer-text"><i class="fas fa-envelope"></i>hungry@foodz.com</p>
-          <p class="footer-text"><i class="fas fa-phone-alt"></i>22 22 55 55</p>
+        <h3>Contact us</h3>
+        <p class="footer-text">
+          <i class="fas fa-home"></i>Slottsplassen 1, 0010 Oslo
+        </p>
+        <p class="footer-text">
+          <i class="fas fa-envelope"></i>hungry@foodz.com
+        </p>
+        <p class="footer-text"><i class="fas fa-phone-alt"></i>22 22 55 55</p>
       </section>
       <section id="section-some">
-          <h3>Social media</h3>
-          <p class="footer-text"><i class="fab fa-facebook-square"></i>Facebook</p>
-          <p class="footer-text"><i class="fab fa-instagram"></i>Instagram</p>
-          <p class="footer-text"><i class="fab fa-twitter"></i>Twitter</p>
+        <h3>Social media</h3>
+        <p class="footer-text">
+          <i class="fab fa-facebook-square"></i>Facebook
+        </p>
+        <p class="footer-text"><i class="fab fa-instagram"></i>Instagram</p>
+        <p class="footer-text"><i class="fab fa-twitter"></i>Twitter</p>
       </section>
       <section id="section-news">
-          <h3>Newsletter</h3>
-          <input type="email" placeholder="ola@nordmann.no" id="newsletter-input">
-          <button id="newsletter-button">Sign up</button>
+        <h3>Newsletter</h3>
+        <input
+          type="email"
+          placeholder="ola@nordmann.no"
+          id="newsletter-input"
+        />
+        <button id="newsletter-button">Sign up</button>
       </section>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
