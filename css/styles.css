@@ -104,6 +104,11 @@ body {
   align-items: center;
 }
 
+#loadMorePosts {
+  display: flex;
+  justify-content: center;
+}
+
 .featured-img {
   width: 75%;
 }
