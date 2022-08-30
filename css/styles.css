@@ -22,7 +22,7 @@ body {
 }
 
 .header-top {
-  background: #ddd;
+  background: #d9b8c4;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -107,7 +107,11 @@ body {
 #loadMorePosts {
   display: flex;
   justify-content: center;
+  text-decoration: none;
 }
+
+
+
 
 .featured-img {
   width: 75%;
@@ -147,7 +151,7 @@ body {
 }
 
 .footer {
-  background: #ddd;
+  background: #d9b8c4;
   min-height: 200px;
   display: flex;
   justify-content: space-between;
@@ -175,23 +179,28 @@ body {
   margin-top: 0.5rem;
   padding: 15px 5px;
   border: none;
+  border-radius: 30px;
 }
 
 #newsletter-button:hover {
-  background-color: red;
+  background-color: #402A2C;
   color: white;
+  /* border-radius: 30px; */
 }
 
 .fa-facebook-square:hover {
   color: #4267b2;
+  transform: scale(1.5)
 }
 
 .fa-instagram:hover {
   color: #8a3ab9;
+  transform: scale(1.5)
 }
 
 .fa-twitter:hover {
   color: #00acee;
+  transform: scale(1.5)
 }
 
 .footer section p i {
@@ -255,7 +264,7 @@ ul {
 input,
 textarea {
   padding: 14px 20px;
-  border-radius: 4px;
+  border-radius: 30px;
   border: 2px solid #2d3319;
 }
 
@@ -415,7 +424,7 @@ input[type="submit"] {
   .menu {
     display: none;
     inset: 0;
-    background: #ddd;
+    background: #d9b8c4;
     flex-direction: column;
   }
 
@@ -425,7 +434,9 @@ input[type="submit"] {
   }
 
   .menu a:hover {
-    background-color: #bbb;
+    background-color: #402A2C;
+    color: white;
+    border-radius: 30px;
   }
 
   #post-list {
