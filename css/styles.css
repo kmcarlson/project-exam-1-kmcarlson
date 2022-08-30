@@ -208,12 +208,12 @@ ul {
 
 .blogg > h2 {
   text-align: center;
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 
 .blogg > p {
   text-align: center;
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 
 #post-wrapper {
