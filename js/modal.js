@@ -24,19 +24,46 @@ function hideHamburgerMenu(){
     document.getElementsByClassName('mobile-menu-show')[0].setAttribute('id','mobile-menu-hidden');
 }
 
+var currentCarouselIndex = 0;
 
 let carousel = document.getElementById("carousel");
 let btnLeft = document.getElementById("arrow-left");
 let btnRight = document.getElementById("arrow-right");
 
 btnLeft.onclick = () => {
-    let newValue = '-' + (parseInt(getComputedStyle(carousel).left.replace(/\D/g, '')) - window.innerWidth) + 'px';
-    carousel.style.left = newValue;
-    console.log("Carousel left set to: ", newValue);
+
+    if (currentCarouselIndex > 0)
+        currentCarouselIndex--;
+
+    showCarouselDiv();
+
+    // let newValue = '-' + (parseInt(getComputedStyle(carousel).left.replace(/\D/g, '')) - window.innerWidth) + 'px';
+    // carousel.style.left = newValue;
+    // console.log("Carousel left set to: ", newValue);
 }
 
 btnRight.onclick = () => {
-    let newValue = '-' + (parseInt(getComputedStyle(carousel).left.replace(/\D/g, '')) + window.innerWidth) + 'px';
-    carousel.style.left = newValue;
-    console.log("Carousel left set to: ", newValue);
+
+    if (currentCarouselIndex < carouselDivWrappers - 1)
+        currentCarouselIndex++;
+
+    showCarouselDiv();
+
+    // let newValue = '-' + (parseInt(getComputedStyle(carousel).left.replace(/\D/g, '')) + window.innerWidth) + 'px';
+    // carousel.style.left = newValue;
+    // console.log("Carousel left set to: ", newValue);
+}
+
+function showCarouselDiv() {
+    let carouselDivWrapper = document.getElementById("carousel");
+    let carouselDivs = carouselDivWrapper.getElementsByTagName("div");
+
+    for (i = 0; i < carouselDivs.length; i++) {
+        if (i == currentCarouselIndex) {
+            carouselDivs[i].style = "";
+        }
+        else {
+            carouselDivs[i].style = "display: none";
+        }
+    }
 }

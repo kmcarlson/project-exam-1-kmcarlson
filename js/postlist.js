@@ -1,25 +1,34 @@
 window.onload=generatePosts()
 
-async function getPosts(){
-    let posts = await fetch('https://newshop.kreatif.no/wp-json/wp/v2/posts?_embed&per_page=100')
+async function getPosts(currentPage) {
+    let perPage = 10;
+    let url = 'https://newshop.kreatif.no/wp-json/wp/v2/posts?_embed&per_page=' + perPage + '&page=' + currentPage;
+    console.log(url);
+    let posts = await fetch(url);
     let response = await posts.json()
-
-
 
     return response
 }
 
 async function getPost(id) {
-    let post = await fetch(`https://newshop.kreatif.no/wp-json/wp/v2/posts/${id}?_embed&per_page=100`)
+    let post = await fetch(`https://newshop.kreatif.no/wp-json/wp/v2/posts/${id}?_embed`)
     let response = await post.json()
 
 
 }
 
-async function generatePosts() {
-    let post = await getPosts()
+async function generatePosts(currentPage) {
+
+    if (typeof(currentPage) == 'undefined')
+        currentPage = 1;
+
+    let post = await getPosts(currentPage);
 
     console.log(post)
+
+    if (post.length < 10) {
+        document.getElementById('loadMorePosts').style = 'display: none';
+    }
 
     let wrapper = document.getElementById('post-list')
     let count = 0;
@@ -44,4 +53,11 @@ async function generatePosts() {
         
     });
 
+}
+
+var currentPage = 1;
+
+function loadMorePosts() {
+    currentPage++;
+    generatePosts(currentPage);
 }

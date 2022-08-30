@@ -16,6 +16,8 @@ async function getPost(id) {
 
 }
 
+var carouselDivWrappers = 0;
+
 async function generatePosts() {
     let post = await getPosts()
 
@@ -23,6 +25,8 @@ async function generatePosts() {
 
     let wrapper = document.getElementById('carousel')
     let div = document.createElement("div");
+
+    let firstDivWrapper = true;
 
     for(let i = 0; i < post.length; i++) {
             let image = document.createElement("img");
@@ -47,7 +51,16 @@ async function generatePosts() {
             wrapper.appendChild(div);
 
         if( i>0 && (i+1) % 4 == 0) {
+
+            if (!firstDivWrapper) {
+                div.style = "display: none";
+            }
+            else {
+                firstDivWrapper = false;
+            }
+
             div = document.createElement("div");
+            carouselDivWrappers++;
         }
 
     }
