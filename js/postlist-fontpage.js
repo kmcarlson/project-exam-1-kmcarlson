@@ -24,7 +24,7 @@ async function generatePosts() {
     let wrapper = document.getElementById('carousel')
     let div = document.createElement("div");
 
-    for(let i = 1; i < post.length; i++) {
+    for(let i = 0; i < post.length; i++) {
             let image = document.createElement("img");
             image.src = `${post[i]._embedded['wp:featuredmedia'][0].source_url}`;
             image.classList.add("featured-img");
@@ -46,7 +46,7 @@ async function generatePosts() {
             div.appendChild(link);
             wrapper.appendChild(div);
 
-        if(i % 4 == 0) {
+        if( i>0 && (i+1) % 4 == 0) {
             div = document.createElement("div");
         }
 
