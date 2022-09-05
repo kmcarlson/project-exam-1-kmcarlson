@@ -2,31 +2,31 @@
 function validate(){
     const name = document.getElementById("name").value;
     const email = document.getElementById("emali").value;
-    const phone = document.getElementById("phone").value;
+    const subject = document.getElementById("subject").value;
     const message = document.getElementById("message").value;
     const error_message = document.getElementById("error_message");
     
     let text;
     if(name.length < 5){
-      text = "* Please Enter valid Name";
+      text = "* Name should contain atleast 5 characters";
       error_message.classList.remove('hidden');
       error_message.innerHTML = text;
       return false;
     }
-    if(email.indexOf("@") == -1 || email.length < 6){
+    if(email.indexOf("@") == -1){
       text = "* Please Enter valid Email";
       error_message.classList.remove('hidden');
       error_message.innerHTML = text;
       return false;
     }
-    if(isNaN(phone) || phone.length != 8){
-      text = "* Please Enter valid Phone Number";
+    if(subject.length < 15){
+      text = "* Subject should be more than 15 characters";
       error_message.classList.remove('hidden');
       error_message.innerHTML = text;
       return false;
     }
     if(message.length <= 30){
-      text = "* Please Enter More Than 30 Characters";
+      text = "* Message should contain more than 30 characters";
       error_message.classList.remove('hidden');
       error_message.innerHTML = text;
       return false;

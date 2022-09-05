@@ -135,11 +135,6 @@ body {
   font-weight: 800;
 }
 
-.info-banner {
-  background: #ddd;
-  min-height: 200px;
-}
-
 .footer {
   background: #d9b8c4;
   min-height: 200px;
@@ -291,7 +286,7 @@ input[type="submit"]:hover {
 }
 
 .carousel-wrapper {
-  height: 1600px;
+  height: 1100px;
   min-height: 300px;
   max-width: 100vw;
   padding: 4rem 0;
