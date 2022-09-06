@@ -60,15 +60,7 @@ async function generatePosts() {
     }
   }
 
-  wrapper.appendChild(div);
+ // wrapper.appendChild(div);
 
-  // post.forEach(post => {
-  //     wrapper.innerHTML +=`
-  //         <a href=post.html?postId=${post.id} class="post">
-  //             <img src=${post._embedded['wp:featuredmedia'][0].source_url} class="featured-img">
-  //             <p>${post.title.rendered}</p>
-  //         </a>
-  //     `;
 
-  // });
 }

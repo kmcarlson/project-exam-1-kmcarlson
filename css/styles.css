@@ -202,17 +202,6 @@ ul {
   object-fit: cover;
 }
 
-#slogan{
-  text-align: center;
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #402a2c;
-  color: white;
-  border-radius: 25px;
-}
-
 /*post*/
 
 .blogg > h2 {
@@ -355,7 +344,6 @@ input[type="submit"]:hover {
 }
 
 @media only screen and (min-width: 600px) {
-
   #post-list {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -390,7 +378,6 @@ input[type="submit"]:hover {
 }
 
 @media only screen and (min-width: 992px) {
-
   .mobile-menu {
     display: none;
   }
