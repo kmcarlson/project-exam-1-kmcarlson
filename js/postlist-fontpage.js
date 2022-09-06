@@ -21,8 +21,6 @@ var carouselDivWrappers = 0;
 async function generatePosts() {
   let post = await getPosts();
 
-  console.log(post);
-
   let wrapper = document.getElementById("carousel");
   let div = document.createElement("div");
 
@@ -59,8 +57,4 @@ async function generatePosts() {
       carouselDivWrappers++;
     }
   }
-
- // wrapper.appendChild(div);
-
-
 }

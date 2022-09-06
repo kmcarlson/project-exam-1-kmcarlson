@@ -38,20 +38,12 @@ btnLeft.onclick = () => {
   if (currentCarouselIndex > 0) currentCarouselIndex--;
 
   showCarouselDiv();
-
-  // let newValue = '-' + (parseInt(getComputedStyle(carousel).left.replace(/\D/g, '')) - window.innerWidth) + 'px';
-  // carousel.style.left = newValue;
-  // console.log("Carousel left set to: ", newValue);
 };
 
 btnRight.onclick = () => {
   if (currentCarouselIndex < carouselDivWrappers - 1) currentCarouselIndex++;
 
   showCarouselDiv();
-
-  // let newValue = '-' + (parseInt(getComputedStyle(carousel).left.replace(/\D/g, '')) + window.innerWidth) + 'px';
-  // carousel.style.left = newValue;
-  // console.log("Carousel left set to: ", newValue);
 };
 
 function showCarouselDiv() {
