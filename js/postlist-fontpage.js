@@ -18,6 +18,16 @@ async function getPost(id) {
 
 var carouselDivWrappers = 0;
 
+function isMobile() {
+  if (window.innerWidth > 600 && window.innerWidth < 992) {
+    return 2;
+  } else if (window.innerWidth > 992) {
+    return 4;
+  } else {
+    return 1;
+  }
+}
+
 async function generatePosts() {
   let post = await getPosts();
 
@@ -25,7 +35,7 @@ async function generatePosts() {
   let div = document.createElement("div");
 
   let firstDivWrapper = true;
-
+  let modModifer = isMobile();
   for (let i = 0; i < post.length; i++) {
     let image = document.createElement("img");
     image.src = `${post[i]._embedded["wp:featuredmedia"][0].source_url}`;
@@ -45,8 +55,7 @@ async function generatePosts() {
 
     div.appendChild(link);
     wrapper.appendChild(div);
-
-    if (i > 0 && (i + 1) % 4 == 0) {
+    if ((i + 1) % modModifer == 0) {
       if (!firstDivWrapper) {
         div.style = "display: none";
       } else {
